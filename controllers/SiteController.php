@@ -213,6 +213,7 @@ class SiteController extends Controller
  
 		if (isset($_POST['Userreg']))
 		{
+			
 			$model->login = $_POST['Userreg']['login'];
 			$model->password = $_POST['Userreg']['password'];
 			$model->name = $_POST['Userreg']['name'];
@@ -236,7 +237,7 @@ class SiteController extends Controller
 		if (isset($_POST['Userreg']))
 		{
 		
-			 
+			
             
 			$model->login = $_POST['Userreg']['login'];
 			$model->password = $_POST['Userreg']['password'];
@@ -250,12 +251,13 @@ class SiteController extends Controller
 			$model->surname = 'surname';*/
 			//$model->surname = $_POST['Post']['Userreg']['surname'];
 
-					
+				$data1 = $model->find()->where(['login' => $model->login])->all();	
+				if(!$data1){
 			if ($model->save())
 			{	
 							
 				Yii::$app->response->redirect('site/login');
-			}
+				}}
 		}
  
 		echo $this->render('reg', array(

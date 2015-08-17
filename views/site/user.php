@@ -12,7 +12,9 @@
     <td style="width:200px; height:200px;"">
 	<?php if ($user->image){ ?>
 		<img src="<?php echo $user->image;?>" width="189" height="255" alt="lorem">
-	<?php } ?>
+	<?php } else{?>
+		<img src="uploads/no_images.jpg" width="189" height="255" alt="lorem">
+	<?php }?>
 		<hr/>
 			<?php if(!Yii::$app->user->isGuest){ ?>
 			 <?php echo Html::a('Update Photo', array('site/upload', 'id' => $user->id), array('class' => 'btn btn-primary')); }?>

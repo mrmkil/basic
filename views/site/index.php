@@ -29,7 +29,9 @@ use yii\db\ActiveRecord;
     <td style="width:200px; height:200px;"">
 		<?php if ($post1->image){ ?>
 		<img src="<?php echo $post1->image;?>" width="189" height="255" alt="lorem">
-	<?php } ?>
+	<?php } else{?>
+		<img src="uploads/no_images.jpg" width="189" height="255" alt="lorem">
+	<?php }?>
 	</td>
 	<td><div class="pull-right btn-group">
 	<?php if(!Yii::$app->user->isGuest){ ?>
